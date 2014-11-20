@@ -333,8 +333,11 @@ int drawable abc_textfield_default_mtrl_alpha 0x7f02002f
 int drawable abc_textfield_search_activated_mtrl_alpha 0x7f020030
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f020031
 int drawable abc_textfield_search_material 0x7f020032
-int drawable ic_launcher 0x7f020033
-int drawable mybutton 0x7f020034
+int drawable android64 0x7f020033
+int drawable cow 0x7f020034
+int drawable ic_launcher 0x7f020035
+int drawable silvertriclops64 0x7f020036
+int drawable twitter64 0x7f020037
 int id action_bar 0x7f050033
 int id action_bar_activity_content 0x7f05001a
 int id action_bar_container 0x7f050032
@@ -348,7 +351,7 @@ int id action_menu_presenter 0x7f05001d
 int id action_mode_bar 0x7f050030
 int id action_mode_bar_stub 0x7f05002f
 int id action_mode_close_button 0x7f050022
-int id action_settings 0x7f050042
+int id action_settings 0x7f050044
 int id activity_chooser_view_content 0x7f050023
 int id always 0x7f05000d
 int id beginning 0x7f050012
@@ -370,6 +373,8 @@ int id icon 0x7f050028
 int id ifRoom 0x7f05000c
 int id image 0x7f050025
 int id imageButton1 0x7f050041
+int id imageButton2 0x7f050042
+int id imageButton3 0x7f050043
 int id listMode 0x7f050002
 int id list_item 0x7f050027
 int id middle 0x7f050013
