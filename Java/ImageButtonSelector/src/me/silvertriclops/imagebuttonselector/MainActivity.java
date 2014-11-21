@@ -17,7 +17,7 @@ public class MainActivity extends ActionBarActivity {
     
     public void showNotification(View view) {
     	Context context = getApplicationContext();
-    	CharSequence text = "You clicked the image!";
+    	CharSequence text = "You clicked the image! MOOOOO!!!1!11!";
     	int duration = Toast.LENGTH_SHORT;
     	
     	Toast toast = Toast.makeText(context, text, duration);
@@ -26,7 +26,7 @@ public class MainActivity extends ActionBarActivity {
     
     public void showNotification2(View view) {
     	Context context = getApplicationContext();
-    	CharSequence text = "You clicked the second image!";
+    	CharSequence text = "You clicked the second image! squeeeak!!1!";
     	int duration = Toast.LENGTH_SHORT;
     	
     	Toast toast = Toast.makeText(context, text, duration);
