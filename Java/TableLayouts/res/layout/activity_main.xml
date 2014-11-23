@@ -1,4 +1,4 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="UTF-8"?><TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tableLayout1"
     android:layout_width="fill_parent"
@@ -6,6 +6,7 @@
     tools:context=".MainActivity" >
 
     <!-- 2 columns -->
+
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
@@ -16,11 +17,67 @@
             android:id="@+id/textview1"
             android:text="@string/col1"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-        
-        <Button 
+        <Button
             android:id="@+id/button1"
             android:text="@string/col2" />
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
         
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_span="2"
+            android:hint="@string/col1_2" />
+    </TableRow>
+    
+    <View
+        android:layout_height="2dip"
+        android:background="#000000" />
+    
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        
+        <TextView
+            android:id="@+id/textview2"
+            android:text="@string/col1"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+        <Button
+            android:id="@+id/button2"
+            android:text="@string/col2" />
+        <Button
+            android:id="@+id/button3"
+            android:text="@string/col2" />
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        
+        <Button
+            android:id="@+id/button4"
+            android:layout_column="2"
+            android:text="@string/col3" />
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dip" >
+        
+        <Button
+            android:id="@+id/button5"
+            android:layout_column="2"
+            android:text="@string/col2" />
     </TableRow>
 
 </TableLayout>
