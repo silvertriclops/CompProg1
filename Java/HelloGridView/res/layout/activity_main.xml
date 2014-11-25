@@ -9,8 +9,4 @@
     android:stretchMode="columnWidth"
     android:gravity="center"
     android:id="@+id/gridview"
-    tools:context=".MainActivity" >
-
-    
-
-</GridView>
+    tools:context=".MainActivity" />
