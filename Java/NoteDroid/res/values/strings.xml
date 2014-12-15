@@ -12,5 +12,6 @@
     <string name="title_activity_about">AboutActivity</string>
     <string name="AboutActivity.CloseBtn">Close</string>
     <string name="credits">Created by Jacob Schooley</string>
+    <string name="title_activity_note_editor">Note Editor</string>
 
 </resources>

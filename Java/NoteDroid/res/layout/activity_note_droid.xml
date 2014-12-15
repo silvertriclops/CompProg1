@@ -40,7 +40,8 @@
             android:drawableTop="@drawable/viewconfiguration64"
             android:minHeight="125dp"
             android:minWidth="125dp"
-            android:text="@string/Main.NewNote" >
+            android:text="@string/Main.NewNote"
+            android:onClick="openNewNote" >
         </Button>
     </TableRow>
     

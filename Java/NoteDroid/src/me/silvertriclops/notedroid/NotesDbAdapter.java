@@ -48,5 +48,32 @@ public class NotesDbAdapter {
 		}
 	}
 	
+	public NotesDbAdapter(Context ctx) {
+		this.mCtx = ctx;
+	}
 	
+	public NotesDbAdapter open() throws SQLException {
+		mDbHelper = new DatabaseHelper(mCtx);
+		mDb = mDbHelper.getWritableDatabase();
+		return this;
+	}
+	
+	public void close() {
+		mDbHelper.close();
+	}
+	
+	public long createNote(String title, String body) {
+		ContentValues initialValues = new ContentValues();
+		
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd\'T\'HH:mm:ss.SSS");
+		String current_time = sdf.format(c.getTime());
+		
+		initialValues.put(KEY_CREATION_DATE, current_time);
+		initialValues.put(KEY_MODIFICATION_DATE, current_time);
+		initialValues.put(KEY_TITLE,  title);
+		initialValues.put(KEY_BODY, body);
+		
+		return mDb.insert(DATABASE_TABLE, null, initialValues);
+	}
 }

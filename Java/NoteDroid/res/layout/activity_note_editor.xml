@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        
+        <EditText
+            android:id="@+id/NoteEditor.NoteName"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" />
+    </LinearLayout>
+    
+    <EditText
+        android:id="@+id/NoteEditor.Body"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:gravity="top|left"
+        android:inputType="textCapSentences|textMultiLine" />
+
+</LinearLayout>

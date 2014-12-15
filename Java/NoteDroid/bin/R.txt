@@ -446,9 +446,11 @@ int layout abc_search_view 0x7f030015
 int layout abc_simple_dropdown_hint 0x7f030016
 int layout activity_about 0x7f030017
 int layout activity_note_droid 0x7f030018
-int layout support_simple_spinner_dropdown_item 0x7f030019
+int layout activity_note_editor 0x7f030019
+int layout support_simple_spinner_dropdown_item 0x7f03001a
 int menu about 0x7f0c0000
 int menu note_droid 0x7f0c0001
+int menu note_editor 0x7f0c0002
 int string AboutActivity_CloseBtn 0x7f0a0018
 int string Main_About 0x7f0a0016
 int string Main_NewNote 0x7f0a0014
@@ -475,6 +477,7 @@ int string app_name 0x7f0a000f
 int string credits 0x7f0a0019
 int string hello_world 0x7f0a0011
 int string title_activity_about 0x7f0a0017
+int string title_activity_note_editor 0x7f0a001a
 int style AppBaseTheme 0x7f0b00eb
 int style AppTheme 0x7f0b00ec
 int style Base_TextAppearance_AppCompat 0x7f0b0098
