@@ -1656,6 +1656,8 @@ containing a value of this type.
         public static final int Main_ViewAboutBtn=0x7f050045;
         public static final int Main_ViewNotesBtn=0x7f050042;
         public static final int Main_ViewPreferencesBtn=0x7f050044;
+        public static final int NoteEditor_Body=0x7f050047;
+        public static final int NoteEditor_NoteName=0x7f050046;
         public static final int action_bar=0x7f050033;
         public static final int action_bar_activity_content=0x7f05001a;
         public static final int action_bar_container=0x7f050032;
@@ -1669,7 +1671,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f050030;
         public static final int action_mode_bar_stub=0x7f05002f;
         public static final int action_mode_close_button=0x7f050022;
-        public static final int action_settings=0x7f050046;
+        public static final int action_settings=0x7f050048;
         public static final int activity_chooser_view_content=0x7f050023;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050012;
@@ -1783,11 +1785,14 @@ containing a value of this type.
         public static final int note_editor=0x7f0c0002;
     }
     public static final class string {
-        public static final int AboutActivity_CloseBtn=0x7f0a0018;
-        public static final int Main_About=0x7f0a0016;
-        public static final int Main_NewNote=0x7f0a0014;
-        public static final int Main_Preferences=0x7f0a0015;
-        public static final int Main_ViewNotes=0x7f0a0013;
+        public static final int AboutActivity_CloseBtn=0x7f0a0017;
+        public static final int Main_About=0x7f0a0015;
+        public static final int Main_NewNote=0x7f0a0013;
+        public static final int Main_Preferences=0x7f0a0014;
+        public static final int Main_ViewNotes=0x7f0a0012;
+        public static final int NoteEditor_CancelMenu=0x7f0a001a;
+        public static final int NoteEditor_NewNote=0x7f0a001b;
+        public static final int NoteEditor_SaveMenu=0x7f0a0019;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -1841,13 +1846,11 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
-        public static final int action_settings=0x7f0a0012;
+        public static final int action_settings=0x7f0a0011;
         public static final int app_description=0x7f0a0010;
         public static final int app_name=0x7f0a000f;
-        public static final int credits=0x7f0a0019;
-        public static final int hello_world=0x7f0a0011;
-        public static final int title_activity_about=0x7f0a0017;
-        public static final int title_activity_note_editor=0x7f0a001a;
+        public static final int title_activity_about=0x7f0a0016;
+        public static final int title_activity_note_editor=0x7f0a0018;
     }
     public static final class style {
         /** 
