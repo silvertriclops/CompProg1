@@ -11,7 +11,13 @@ import android.view.Window;
 
 public class NoteDroid extends ActionBarActivity {
 	
+	private static final int ACTIVITY_VIEW_NOTE_LIST = 0;
 	private static final int ACTIVITY_CREATE_NEW_NOTE = 1;
+	
+	public void openNoteList(View view) {
+		Intent i = new Intent(this, NoteList.class);
+		startActivityForResult(i, ACTIVITY_VIEW_NOTE_LIST);
+	}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,5 +55,10 @@ public class NoteDroid extends ActionBarActivity {
     	i.putExtra(NotesDbAdapter.KEY_ROWID, new Long(-1));
     	i.putExtra(NoteEditor.NOTEEDITOR_MODE, NoteEditor.NOTEEDITOR_MODE_EDIT);
     	startActivityForResult(i, ACTIVITY_CREATE_NEW_NOTE);
+    }
+    
+    public void openPreferences(View view) {
+    	Intent i = new Intent(this, Preferences.class);
+    	startActivity(i);
     }
 }

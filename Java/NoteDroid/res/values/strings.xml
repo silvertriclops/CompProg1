@@ -17,5 +17,54 @@
     <string name="NoteEditor.SaveMenu">Save</string>
     <string name="NoteEditor.CancelMenu">Cancel</string>
     <string name="NoteEditor.NewNote">New Note</string>
+    
+    <string name="title_activity_note_list">NoteList</string>
+    <string name="NoteList.NoNotes">No notes yet. Use the "Menu" key to add notes.</string>
+    <string name="NoteList.MenuCreateNote">New note</string>
+    <string name="NoteList.MenuDeleteNote">Delete</string>
+    <string name="NoteList.MenuShowProperties">Properties</string>
+    <string name="NoteList.DeleteNoteQuestion">Are you sure you want to delete this note?</string>
+    <string name="NoteList.DeleteConfirm">Yes</string>
+    <string name="NoteList.DeleteCancel">No</string>
+    
+    <string name="title_activity_properties">Properties</string>
+    <string name="PropertiesDialog.CloseBtn">Close</string>
+    <string name="PropertiesDialog.Name">Name</string>
+    <string name="PropertiesDialog.Type">Type</string>
+    <string name="PropertiesDialog.NoteType">Note</string>
+    <string name="PropertiesDialog.CreationDate">Creation Date</string>
+    <string name="PropertiesDialog.ModificationDate">Modification Date</string>
+    
+    <string name="title_activity_preferences">Preferences</string>
+    <string name="PreferenceSortCategoryTitle">Sort </string>
+    <string name="PreferenceSortModeTitle">Sort mode</string>
+    <string name="PreferenceSortModeSummary">Specify the sort mode of notes and category.</string>
+    <string name="PreferenceSortModeName">Name</string>
+    <string name="PreferenceSortModeModificationDate">Modification date</string>
+    <string name="PreferenceSortModeCreationDate">Creation date</string>
+    <string-array name="PreferenceSortMode">
+        <item>@string/PreferenceSortModeName</item>
+        <item>@string/PreferenceSortModeModificationDate</item>
+        <item>@string/PreferenceSortModeCreationDate</item>
+    </string-array>
+    <string-array name="PreferenceSortModeValues">
+        <item>title</item>
+        <item>modification_date</item>
+        <item>creation_date</item>
+    </string-array>
+    <string name="PreferenceDirectionTitle">Sort direction</string>
+    <string name="PreferenceDirectionSummary">Specify the sort direction of notes and category.</string>
+    <string name="PreferenceSortDirectionAscending">Ascending</string>
+    <string name="PreferenceSortDirectionDescending">Descending</string>
+    <string-array name="PreferenceSortDirection">
+        <item>@string/PreferenceSortDirectionAscending</item>
+        <item>@string/PreferenceSortDirectionDescending</item>
+    </string-array>
+    <string-array name="PreferenceSortDirectionValues">
+        <item>ASC</item>
+        <item>DESC</item>
+    </string-array>
+    
+    <string name="savedNote">Saved!</string>
 
 </resources>

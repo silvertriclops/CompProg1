@@ -39,6 +39,32 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="me.silvertriclops.notedroid.NoteDroid" />
         </activity>
+        <activity
+            android:name=".NoteList"
+            android:label="@string/title_activity_note_list"
+            android:parentActivityName=".NoteDroid" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.silvertriclops.notedroid.NoteDroid" />
+        </activity>
+        <activity
+            android:name=".PropertiesActivity"
+            android:label="@string/title_activity_properties"
+            android:theme="@android:style/Theme.Dialog"
+            android:parentActivityName=".notedroid.NoteList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.silvertriclops.notedroid.NoteList" />
+        </activity>
+        <activity
+            android:name=".PreferenceActivity"
+            android:label="@string/title_activity_preferences"
+            android:theme="@android:style/Theme.Dialog"
+            android:parentActivityName=".notedroid.NoteList" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="me.silvertriclops.notedroid.NoteList" />
+        </activity>
     </application>
 
 </manifest>

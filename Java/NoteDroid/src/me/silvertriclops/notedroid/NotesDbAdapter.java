@@ -1,13 +1,17 @@
 package me.silvertriclops.notedroid;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class NotesDbAdapter {
@@ -75,5 +79,74 @@ public class NotesDbAdapter {
 		initialValues.put(KEY_BODY, body);
 		
 		return mDb.insert(DATABASE_TABLE, null, initialValues);
+	}
+	
+	public Cursor fetchAllNotes() {
+		String sortMode = PreferenceManager.getDefaultSharedPreferences(mCtx).getString("sortModePreference", KEY_TITLE);
+		String sortDirection  = PreferenceManager.getDefaultSharedPreferences(mCtx).getString("sortDirectionPreference", "ASC");
+		
+		return mDb.query(DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE, KEY_BODY}, null, null, null, null, null);
+	}
+	
+	public Cursor fetchNote(long rowId) throws SQLException {
+		
+		Cursor mCursor = mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID, KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null, null, null, null, null);
+		if (mCursor != null) {
+			mCursor.moveToFirst();
+		}
+		
+		return mCursor;
+		
+	}
+	
+	public boolean updateNote(long rowId, String title, String body) {
+		ContentValues args = new ContentValues();
+		
+		Calendar c = Calendar.getInstance();
+		SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd\'T\'HH:mm:ss.SSS");
+		String current_time = sdf.format(c.getTime());
+		
+		args.put(KEY_TITLE, title);
+		args.put(KEY_BODY, body);
+		args.put(KEY_MODIFICATION_DATE, current_time);
+		
+		return mDb.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+	}
+	
+	public boolean deleteNote(long rowId) {
+		return mDb.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+	}
+	
+	public Note getNoteById(long rowId) {
+		Cursor note = mDb.query(true, DATABASE_TABLE, new String[] {KEY_ROWID, KEY_CREATION_DATE, KEY_MODIFICATION_DATE, KEY_TITLE, KEY_BODY}, KEY_ROWID + "=" + rowId, null, null, null, null, null);
+		
+		if (note != null) {
+			note.moveToFirst();
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd\'T\'HH:mm:ss.SSS");
+			Date creationDate;
+			Date modificationDate;
+			
+			try {
+				creationDate = sdf.parse(note.getString(note.getColumnIndexOrThrow(KEY_CREATION_DATE)));
+			} catch (ParseException e) {
+				creationDate = new Date();
+			}
+			
+			try {
+				modificationDate = sdf.parse(note.getString(note.getColumnIndexOrThrow(KEY_MODIFICATION_DATE)));
+			} catch (ParseException e) {
+				modificationDate = new Date();
+			}
+			
+			Note result = new Note(note.getLong(note.getColumnIndexOrThrow(KEY_ROWID)), creationDate, modificationDate, note.getString(note.getColumnIndexOrThrow(KEY_TITLE)), note.getString(note.getColumnIndexOrThrow(KEY_BODY)));
+			
+			note.close();
+			
+			return result;
+			
+		} else {
+			return null;
+		}
 	}
 }

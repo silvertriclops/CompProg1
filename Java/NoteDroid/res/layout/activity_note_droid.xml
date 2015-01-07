@@ -26,7 +26,8 @@
             android:drawableTop="@drawable/viewnotes64"
             android:minHeight="125dp"
             android:minWidth="125dp"
-            android:text="@string/Main.ViewNotes" >
+            android:text="@string/Main.ViewNotes"
+            android:onClick="openNoteList" >
         </Button>
         
     	<Button
@@ -61,7 +62,8 @@
             android:drawableTop="@drawable/newnote64"
             android:minHeight="125dp"
             android:minWidth="125dp"
-            android:text="@string/Main.Preferences" >
+            android:text="@string/Main.Preferences"
+            android:onClick="openPreferences" >
         </Button>
         
     	<Button

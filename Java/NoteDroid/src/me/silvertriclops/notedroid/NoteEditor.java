@@ -1,17 +1,20 @@
 package me.silvertriclops.notedroid;
 
 import android.app.Activity;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NoteEditor extends Activity {
 	
 	public static final String NOTEEDITOR_MODE = "NOTEEDITOR_MODE";
 	public static final String NOTEEDITOR_MODE_EDIT = "NOTEEDITOR_MODE_EDIT";
+	public static final String NOTEEDITOR_MODE_SHOW = "NOTEEDITOR_MODE_SHOW";
 	
 	public static final int MENU_SAVE = Menu.FIRST;
 	public static final int MENU_CANCEL = Menu.FIRST + 1;
@@ -45,6 +48,8 @@ public class NoteEditor extends Activity {
 		if (mNoteMode.equals(NOTEEDITOR_MODE_EDIT)) {
 			this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE | WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
 		}
+		
+		populateFields();
 	}
 
 	@Override
@@ -109,7 +114,21 @@ public class NoteEditor extends Activity {
 					extras.putLong(NotesDbAdapter.KEY_ROWID, mRowId);
 					extras.putString(NoteEditor.NOTEEDITOR_MODE, mNoteMode);
 				}
+			} else {
+				mDbHelper.updateNote(mRowId, title, body);
+				Toast.makeText(getApplicationContext(), getString(R.string.savedNote), Toast.LENGTH_SHORT).show();
 			}
+		}
+	}
+	
+	private void populateFields() {
+		if (mRowId != -1) {
+			Cursor note = mDbHelper.fetchNote(mRowId);
+			startManagingCursor(note);
+			mTitleText.setText(note.getString(note.getColumnIndexOrThrow(NotesDbAdapter.KEY_TITLE)));
+			mBodyText.setText(note.getString(note.getColumnIndexOrThrow(NotesDbAdapter.KEY_BODY)));
+		} else {
+			mTitleText.setHint(R.string.NoteEditor_NewNote);
 		}
 	}
 }
